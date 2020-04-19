@@ -1241,6 +1241,7 @@ import java.util.function.LongBinaryOperator;
 %rename (restartSearch) SearchMonitor::RestartSearch;
 
 // SearchLimit
+%feature("director") SearchLimit;
 %unignore SearchLimit;
 %rename (check) SearchLimit::Check;
 %rename (copy) SearchLimit::Copy;
@@ -1248,11 +1249,13 @@ import java.util.function.LongBinaryOperator;
 %rename (makeClone) SearchLimit::MakeClone;
 
 // RegularLimit
+%feature("director") RegularLimit;
 %unignore RegularLimit;
 %ignore RegularLimit::duration_limit;
 %ignore RegularLimit::AbsoluteSolverDeadline;
 
 // SearchLog
+%feature("director") SearchLog;
 %unignore SearchLog;
 %typemap(javaimports) SearchLog %{
 // Used to wrap DisplayCallback (std::function<std::string()>)
@@ -1263,6 +1266,7 @@ import java.util.function.Supplier;
 %rename (outputDecision) SearchLog::OutputDecision;
 
 // LocalSearchMonitor
+%feature("director") LocalSearchMonitor;
 %unignore LocalSearchMonitor;
 %rename (beginAcceptNeighbor) LocalSearchMonitor::BeginAcceptNeighbor;
 %rename (beginFiltering) LocalSearchMonitor::BeginFiltering;
@@ -1276,6 +1280,7 @@ import java.util.function.Supplier;
 %rename (endOperatorStart) LocalSearchMonitor::EndOperatorStart;
 
 // PropagationMonitor
+%feature("director") PropagationMonitor;
 %unignore PropagationMonitor;
 %rename (beginConstraintInitialPropagation) PropagationMonitor::BeginConstraintInitialPropagation;
 %rename (beginDemonRun) PropagationMonitor::BeginDemonRun;
@@ -1309,6 +1314,7 @@ import java.util.function.Supplier;
 %rename (startProcessingIntegerVariable) PropagationMonitor::StartProcessingIntegerVariable;
 
 // IntVarLocalSearchHandler
+%feature("director") IntVarLocalSearchHandler;
 %unignore IntVarLocalSearchHandler;
 %rename (addToAssignment) IntVarLocalSearchHandler::AddToAssignment;
 %rename (onAddVars) IntVarLocalSearchHandler::OnAddVars;
@@ -1316,6 +1322,7 @@ import java.util.function.Supplier;
 %rename (valueFromAssignent) IntVarLocalSearchHandler::ValueFromAssignent;
 
 // SequenceVarLocalSearchHandler
+%feature("director") SequenceVarLocalSearchHandler;
 %unignore SequenceVarLocalSearchHandler;
 %rename (addToAssignment) SequenceVarLocalSearchHandler::AddToAssignment;
 %rename (onAddVars) SequenceVarLocalSearchHandler::OnAddVars;
@@ -1330,6 +1337,7 @@ import java.util.function.Supplier;
 %rename (start) LocalSearchOperator::Start;
 
 // VarLocalSearchOperator<>
+%feature("director") VarLocalSearchOperator;
 %unignore VarLocalSearchOperator;
 %ignore VarLocalSearchOperator::Start;
 %ignore VarLocalSearchOperator::ApplyChanges;
@@ -1410,6 +1418,7 @@ import java.util.function.LongToIntFunction;
 %rename (setNextBaseToIncrement) PathOperator::SetNextBaseToIncrement;
 
 // PathWithPreviousNodesOperator
+%feature("director") PathWithPreviousNodesOperator;
 %unignore PathWithPreviousNodesOperator;
 %rename (isPathStart) PathWithPreviousNodesOperator::IsPathStart;
 %rename (prev) PathWithPreviousNodesOperator::Prev;
